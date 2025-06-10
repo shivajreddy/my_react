@@ -1,41 +1,25 @@
 import { Button } from "@/components/ui/button"
 import {
     Card,
-    CardAction,
     CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
 } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import { Badge } from "./components/ui/badge"
 
 export function App() {
     return (
-        <div>
-            <Card className="w-full max-w-sm">
-                <CardHeader>
-                    <CardTitle>Login to your account</CardTitle>
-                    <CardDescription>
-                        Enter your email below to login to your account
-                    </CardDescription>
-                    <CardAction>
-                        <Button>Sign Up</Button>
-                    </CardAction>
-                </CardHeader>
+        <div className="flex items-center justify-center min-h-screen">
+            <Card className="w-[600px] h-[450px]">
+                <p className="text-xl font-semibold text-center">ENGINEERING - DRAWING SET</p>
                 <CardContent>
-                    <p>hi</p>
+                    <Button>VIEW DRAWING SET ON BIM360</Button>
+                    <Badge variant="default" className="m-2">V7</Badge>
+                    <div className="flex my-2">
+                        <p className="pr-4">File Name</p>
+                        <p>EngSet_V1_02-34-38_3-8-25.pdf</p>
+                    </div>
                 </CardContent>
-                <CardFooter className="flex-col gap-2">
-                    <Button type="submit" className="w-full">
-                        Login
-                    </Button>
-                    <Button variant="outline" className="w-full">
-                        Login with Google
-                    </Button>
-                </CardFooter>
             </Card>
-            )
+        </div>
+    )
 }
 
