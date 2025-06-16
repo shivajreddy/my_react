@@ -23,20 +23,22 @@ export function CheckStatus() {
     console.log("folderConnectionStatus", folderConnectionStatus);
 
     return (
-        <>
+        <div className="m-4">
             <p>CHECKING STATUS</p>
             {folderConnectionStatus ? (
                 <div>
                     <h3>Folder Connection Status:</h3>
-                    {Object.entries(folderConnectionStatus).map(([folderName, isConnected]) => (
-                        <div key={folderName}>
-                            <strong>{folderName}</strong>: {isConnected ? '✅ Connected' : '❌ Disconnected'}
-                        </div>
-                    ))}
+                    <div className="flex gap-8">
+                        {Object.entries(folderConnectionStatus).map(([folderName, isConnected]) => (
+                            <div key={folderName}>
+                                <strong>{folderName}</strong>: {isConnected ? '✅ Connected' : '❌ Disconnected'}
+                            </div>
+                        ))}
+                    </div>
                 </div>
             ) : (
                 <p>Loading...</p>
             )}
-        </>
+        </div>
     )
 }
